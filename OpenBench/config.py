@@ -92,340 +92,361 @@ OPENBENCH_CONFIG = {
 
     'engines' : {
 
-        'Ethereal' : {
+        'Odonata' : {
 
-            'nps'       : 1060000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/AndyGrant/Ethereal',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['gcc'],
-                'cpuflags'  : ['AVX2', 'AVX', 'FMA', 'POPCNT', 'SSE2', 'SSE'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '10.0+0.1' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '60.0+0.6' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-             },
-        },
-
-        'Laser' : {
-
-            'nps'       : 925000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/jeffreyan11/uci-chess-engine',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['g++'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-             },
-        },
-
-        'Weiss' : {
-
-            'nps'       : 2500000,
-            'base'      : 'master',
-            'bounds'    : '[-1.00, 4.00]',
-            'source'    : 'https://github.com/TerjeKir/weiss',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['gcc'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :  32, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' : 128, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' : 128, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 512, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Demolito' : {
-
-            'nps'       : 1250000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/lucasart/Demolito',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['clang', 'gcc'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  32, 'timecontrol' : '32.0+0.32'},
-                'smpstc'  : { 'threads' : 8, 'hash' :  32, 'timecontrol' : '4.0+0.04' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 128, 'timecontrol' : '16.0+0.16'},
-            },
-        },
-
-        'RubiChess' : {
-
-            'nps'       : 980000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/Matthies/RubiChess',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['g++'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '10.0+0.1' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '60.0+0.6' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'FabChess' : {
-
-            'nps'       : 850000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/fabianvdW/FabChess',
-
-            'build'     : {
-                'path'      : '',
-                'compilers' : ['cargo>=1.41.0'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Igel' : {
-
-            'nps'       : 790000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/vshcherbyna/igel',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['g++'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '10.0+0.1' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '60.0+0.6' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Winter' : {
-
-            'nps'       : 650000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/rosenthj/Winter',
-
-            'build'     : {
-                'path'      : '',
-                'compilers' : ['clang++', 'g++'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Halogen' : {
-
-            'nps'       : 1950000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/KierenP/Halogen',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['g++'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Stash' : {
-
-            'nps'       : 1850000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/mhouppin/stash-bot',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['gcc', 'clang'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :  16, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Seer' : {
-
-            'nps'       : 500000,
+            'nps'       : 1000000,
             'base'      : 'main',
             'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/connormcmonigle/seer-nnue',
-
-            'build'     : {
-                'path'      : 'build',
-                'compilers' : ['g++>=9.0.0'],
-                'cpuflags'  : ['AVX2', 'AVX', 'FMA', 'POPCNT', 'SSE2', 'SSE'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :  32, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Koivisto' : {
-
-            'nps'       : 1750000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/Luecx/Koivisto',
-
-            'build'     : {
-                'path'      : 'src_files',
-                'compilers' : ['g++'],
-                'cpuflags'  : ['AVX2', 'AVX', 'FMA', 'POPCNT', 'SSE2', 'SSE'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Drofa' : {
-
-            'nps'       : 1375000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/justNo4b/Drofa',
+            'source'    : 'https://github.com/akanalytics/odonata',
 
             'build'     : {
                 'path'      : '',
-                'compilers' : ['g++'],
+                'compilers' : ['cargo>=1.56.0'],
                 'cpuflags'  : ['POPCNT'],
             },
 
             'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Bit-Genie' : {
-
-            'nps'       : 3000000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/Aryan1508/Bit-Genie',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['g++'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-            },
-        },
-
-        'Berserk' : {
-
-            'nps'       : 965000,
-            'base'      : 'main',
-            'bounds'    : '[-1.00, 4.00]',
-            'source'    : 'https://github.com/jhonnold/berserk',
-
-            'build'     : {
-                'path'      : 'src',
-                'compilers' : ['gcc'],
-                'cpuflags'  : ['POPCNT'],
-            },
-
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '1.0+0.1' },
+                'ltc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '75.0+0.6' },
                 'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
                 'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
              },
         },
 
-        'Zahak' : {
+        # 'Ethereal' : {
 
-            'nps'       : 1020000,
-            'base'      : 'master',
-            'bounds'    : '[0.00, 5.00]',
-            'source'    : 'https://github.com/amanjpro/zahak',
+        #     'nps'       : 1060000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/AndyGrant/Ethereal',
 
-            'build'     : {
-                'path'      : '',
-                'compilers' : ['go'],
-                'cpuflags'  : ['AVX', 'POPCNT'],
-            },
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['gcc'],
+        #         'cpuflags'  : ['AVX2', 'AVX', 'FMA', 'POPCNT', 'SSE2', 'SSE'],
+        #     },
 
-            'testmodes' : {
-                'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
-                'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
-                'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
-                'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
-             },
-        },
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '10.0+0.1' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '60.0+0.6' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #      },
+        # },
+
+        # 'Laser' : {
+
+        #     'nps'       : 925000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/jeffreyan11/uci-chess-engine',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['g++'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #      },
+        # },
+
+        # 'Weiss' : {
+
+        #     'nps'       : 2500000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[-1.00, 4.00]',
+        #     'source'    : 'https://github.com/TerjeKir/weiss',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['gcc'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :  32, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' : 128, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' : 128, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 512, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Demolito' : {
+
+        #     'nps'       : 1250000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/lucasart/Demolito',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['clang', 'gcc'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  32, 'timecontrol' : '32.0+0.32'},
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  32, 'timecontrol' : '4.0+0.04' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 128, 'timecontrol' : '16.0+0.16'},
+        #     },
+        # },
+
+        # 'RubiChess' : {
+
+        #     'nps'       : 980000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/Matthies/RubiChess',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['g++'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '10.0+0.1' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '60.0+0.6' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'FabChess' : {
+
+        #     'nps'       : 850000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/fabianvdW/FabChess',
+
+        #     'build'     : {
+        #         'path'      : '',
+        #         'compilers' : ['cargo>=1.41.0'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Igel' : {
+
+        #     'nps'       : 790000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/vshcherbyna/igel',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['g++'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '10.0+0.1' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '60.0+0.6' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Winter' : {
+
+        #     'nps'       : 650000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/rosenthj/Winter',
+
+        #     'build'     : {
+        #         'path'      : '',
+        #         'compilers' : ['clang++', 'g++'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Halogen' : {
+
+        #     'nps'       : 1950000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/KierenP/Halogen',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['g++'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Stash' : {
+
+        #     'nps'       : 1850000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/mhouppin/stash-bot',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['gcc', 'clang'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :  16, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Seer' : {
+
+        #     'nps'       : 500000,
+        #     'base'      : 'main',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/connormcmonigle/seer-nnue',
+
+        #     'build'     : {
+        #         'path'      : 'build',
+        #         'compilers' : ['g++>=9.0.0'],
+        #         'cpuflags'  : ['AVX2', 'AVX', 'FMA', 'POPCNT', 'SSE2', 'SSE'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :  32, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Koivisto' : {
+
+        #     'nps'       : 1750000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/Luecx/Koivisto',
+
+        #     'build'     : {
+        #         'path'      : 'src_files',
+        #         'compilers' : ['g++'],
+        #         'cpuflags'  : ['AVX2', 'AVX', 'FMA', 'POPCNT', 'SSE2', 'SSE'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Drofa' : {
+
+        #     'nps'       : 1375000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/justNo4b/Drofa',
+
+        #     'build'     : {
+        #         'path'      : '',
+        #         'compilers' : ['g++'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Bit-Genie' : {
+
+        #     'nps'       : 3000000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/Aryan1508/Bit-Genie',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['g++'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #     },
+        # },
+
+        # 'Berserk' : {
+
+        #     'nps'       : 965000,
+        #     'base'      : 'main',
+        #     'bounds'    : '[-1.00, 4.00]',
+        #     'source'    : 'https://github.com/jhonnold/berserk',
+
+        #     'build'     : {
+        #         'path'      : 'src',
+        #         'compilers' : ['gcc'],
+        #         'cpuflags'  : ['POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #      },
+        # },
+
+        # 'Zahak' : {
+
+        #     'nps'       : 1020000,
+        #     'base'      : 'master',
+        #     'bounds'    : '[0.00, 5.00]',
+        #     'source'    : 'https://github.com/amanjpro/zahak',
+
+        #     'build'     : {
+        #         'path'      : '',
+        #         'compilers' : ['go'],
+        #         'cpuflags'  : ['AVX', 'POPCNT'],
+        #     },
+
+        #     'testmodes' : {
+        #         'stc'     : { 'threads' : 1, 'hash' :   8, 'timecontrol' : '8.0+0.08' },
+        #         'ltc'     : { 'threads' : 1, 'hash' :  64, 'timecontrol' : '40.0+0.4' },
+        #         'smpstc'  : { 'threads' : 8, 'hash' :  64, 'timecontrol' : '5.0+0.05' },
+        #         'smpltc'  : { 'threads' : 8, 'hash' : 256, 'timecontrol' : '20.0+0.2' },
+        #      },
+        # },
     },
 }

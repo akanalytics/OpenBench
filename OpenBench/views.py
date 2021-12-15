@@ -667,9 +667,11 @@ def clientWrongBench(request):
     except Exception as error: return HttpResponse(str(error))
 
     # Find and stop the test with the bad bench
-    if int(request.POST['wrong']) != 0:
-        test = Test.objects.get(id=int(request.POST['testid']))
-        test.finished = True; test.save()
+
+    # python complains about test referenced before use without this change [AW]
+    # if int(request.POST['wrong']) != 0:
+    test = Test.objects.get(id=int(request.POST['testid']))
+    test.finished = True; test.save()
 
     # Collect information on the Error
     wrong   = request.POST['wrong']
