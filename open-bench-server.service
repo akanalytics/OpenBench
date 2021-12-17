@@ -1,0 +1,27 @@
+[Unit]
+Description=open-bench-server
+After=network-online.target
+Wants=network-online.target
+
+
+[Service]
+Environment="PYTHONUNBUFFERED=1"
+ExecStart=/usr/bin/python3 /home/chesshome/code/OpenBench/manage.py runserver 10.128.0.8:8000
+WorkingDirectory=/home/chesshome/code/OpenBench/
+User=chess
+Group=chess
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
+# sudo mv open-bench-server.service /etc/systemd/system/open-bench-server.service
+# sudo systemctl start open-bench-server.service
+# sudo systemctl status open-bench-server.service
+# sudo systemctl enable open-bench-server.service
+
+# If your ExecStart line is all correct you should see the service running.
+
+# Use sudo journalctl -u open-bench-server.service -f to tail the server logs.
+
